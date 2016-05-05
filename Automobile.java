@@ -10,7 +10,7 @@ public class Automobile {
     private int opcycle;
     private int currentgear;
     private int currentspeed;
-    private int distance;
+    private double distance;
     
     public void setYear(int y){
         year = y;
@@ -61,7 +61,7 @@ public class Automobile {
     public double getDistanceTraveled (){
         int i = 0;
         while (i < opcycle) {
-            distance = distance + ((currentspeed)/60);
+            distance = distance + (((double)currentspeed)/60);
             i++;
         }
         return distance;
@@ -76,4 +76,11 @@ public class Automobile {
         about = about + ("\nColor = " + color + "\n");
         return about;
     }  
+    
+    public void Status(int newOpCycle, int x, int y, double z){
+        System.out.printf("Operating cycle set to %d."
+                + "\nCurrent gear is %d"
+                + "\nCurrent speed is %d mph"
+                + "\nDistance traveled is %.2f miles", newOpCycle,currentgear, currentspeed, distance);
+    }
 }
