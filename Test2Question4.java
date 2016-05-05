@@ -8,8 +8,8 @@ public class Test2Question4 {
                          
         System.out.print("Please enter the number of dice you want to roll: ");
         int numberOfDice = input.nextInt();
-        int rollResult = Dice.Throw(numberOfDice);
-        System.out.println("You rolled " + Dice.Throw(numberOfDice));
+        int newOpCycle = Dice.Throw(numberOfDice);
+        System.out.println("You rolled a total of " + newOpCycle);
         
     // Creation of Truck
         
@@ -21,13 +21,10 @@ public class Test2Question4 {
         truck.setName("Trucky");
         truck.setGears(3);
         
-        truck.setOperatingCycle(rollResult);
+        truck.setOperatingCycle(newOpCycle);
         
         System.out.println(truck.About());
-        System.out.println("Operating cycle set to " + truck.getOperatingCycle());
-        System.out.println("Current gear is " + truck.getCurrentGear());
-        System.out.println("Current speed is " + truck.getCurrentSpeed() + "mph");
-        System.out.printf("Distance traveled is %.3f", truck.getDistanceTraveled());
+        truck.Status(newOpCycle, truck.getCurrentGear(), truck.getCurrentSpeed(), truck.getDistanceTraveled());
         
     // Test the creation of the van
     
@@ -39,14 +36,11 @@ public class Test2Question4 {
         van.setName("Vany");
         van.setGears(4);
         
-        van.setOperatingCycle(rollResult);
+        van.setOperatingCycle(newOpCycle);
         
         System.out.println("");
         System.out.println(van.About());
-        System.out.println("Operating cycle set to " + van.getOperatingCycle());
-        System.out.println("Current gear is " + van.getCurrentGear());
-        System.out.println("Current speed is " + van.getCurrentSpeed() + "mph");
-        System.out.printf("Distance traveled is %.3f", van.getDistanceTraveled());
+        van.Status(newOpCycle, van.getCurrentGear(), van.getCurrentSpeed(), van.getDistanceTraveled());
         
         
     // Test the creation of the sports car
@@ -59,16 +53,12 @@ public class Test2Question4 {
         car.setName("Sporty");
         car.setGears(6);
         
-        car.setOperatingCycle(rollResult);
+        car.setOperatingCycle(newOpCycle);
         
         System.out.println("");
         System.out.println(car.About());
-        System.out.println("Operating cycle set to " + car.getOperatingCycle());
-        System.out.println("Current gear is " + car.getCurrentGear());
-        System.out.println("Current speed is " + car.getCurrentSpeed() + "mph");
-        System.out.printf("Distance traveled is %.3f", car.getDistanceTraveled());
-
-                
+        car.Status(newOpCycle, car.getCurrentGear(), car.getCurrentSpeed(), car.getDistanceTraveled());
+        
     }
     
 }
